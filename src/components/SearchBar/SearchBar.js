@@ -13,7 +13,7 @@ class searchBar extends Component {
     if (term !== "") {
       this.props.changed(term);
     }
-    this.setState({ term });
+    this.setState({ term: term });
   }
 
   render() {

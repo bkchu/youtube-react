@@ -30,6 +30,12 @@ body {
   }
 }
 
+.loading {
+  grid-column: 3 / 8;
+  text-align: center;
+  margin-top: 35%;
+}
+
 .SearchBar {
   font-family: "Roboto Slab", sans-serif;
   font-size: 1.5em;

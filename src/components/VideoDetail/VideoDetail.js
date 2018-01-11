@@ -4,8 +4,8 @@ import moment from "moment";
 const videoDetail = props => {
   if (!props.video) {
     return (
-      <div>
-        <h1>Loading...</h1>
+      <div className="loading">
+        <h1>Search for a video in the search bar above.</h1>
       </div>
     );
   }

@@ -12,24 +12,28 @@ class App extends Component {
   constructor(props) {
     super(props);
 
+    this.videoSearch("");
+
     this.state = {
       videos: [],
-      selectedVideo: null
+      selectedVideo: null,
+      searched: false
     };
-
-    this.videoSearch("learning React");
   }
 
   onChangeHandler = val => {
     this.videoSearch(val);
+    this.setState({ searched: true });
   };
 
   videoSearch(term) {
     YTSearch({ key: API_KEY, term: term }, videos => {
-      this.setState({
-        videos: videos,
-        selectedVideo: videos[0]
-      });
+      if (this.state.searched) {
+        this.setState({
+          videos: videos,
+          selectedVideo: videos[0]
+        });
+      }
     });
   }
 
