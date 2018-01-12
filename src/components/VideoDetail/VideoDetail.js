@@ -27,11 +27,13 @@ const videoDetail = props => {
         />
       </div>
       <p className="video-title">{content.title}</p>
-      <a target="_blank" href={channelUrl}>
-        {content.channelTitle}
-      </a>
-      <p>Published on {moment(content.publishedAt).format("MMM DD, YYYY")}</p>
-      <p className="video-description">{content.description}</p>
+      <div className="description">
+        <a target="_blank" href={channelUrl}>
+          {content.channelTitle}
+        </a>
+        <p>Published on {moment(content.publishedAt).format("MMM DD, YYYY")}</p>
+        <p className="video-description">{content.description}</p>
+      </div>
     </div>
   );
 };

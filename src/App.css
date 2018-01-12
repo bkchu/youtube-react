@@ -50,6 +50,7 @@ body {
   height: 100%;
   width: 100%;
   padding: 10px 20px;
+  letter-spacing: 0.05em;
 }
 
 .VideoList {
@@ -93,13 +94,20 @@ body {
   height: 100%;
 }
 
+.VideoDetail .description {
+  padding: 20px;
+  margin-right: 10%;
+}
+
 .VideoDetail a,
 .VideoDetail p {
   padding: 0 10px;
   margin: 0;
 }
 
-.VideoDetail p:first-of-type {
+.VideoDetail .video-title {
+  padding-top: 10px;
+  padding-left: 20px;
   font-size: 2em;
 }
 
