@@ -2,7 +2,7 @@ import React from "react";
 import moment from "moment";
 
 const videoDetail = props => {
-  if (!props.video) {
+  if (!props.video || !props.searchable) {
     return (
       <div className="loading">
         <h1>Search for a video in the search bar above.</h1>

@@ -36,6 +36,12 @@ body {
   margin-top: 35%;
 }
 
+@media (max-width: 900px) {
+  .loading {
+    grid-column: 1;
+  }
+}
+
 .SearchBar {
   font-family: "Roboto Slab", sans-serif;
   font-size: 1.5em;
@@ -50,7 +56,6 @@ body {
   height: 100%;
   width: 100%;
   padding: 10px 20px;
-  letter-spacing: 0.05em;
 }
 
 .VideoList {
@@ -95,7 +100,8 @@ body {
 }
 
 .VideoDetail .description {
-  padding: 20px;
+  padding: 20px 0;
+  padding-left: 10px;
   margin-right: 10%;
 }
 

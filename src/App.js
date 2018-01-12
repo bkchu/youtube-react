@@ -17,18 +17,22 @@ class App extends Component {
     this.state = {
       videos: [],
       selectedVideo: null,
-      searched: false
+      searchable: false
     };
   }
 
   onChangeHandler = val => {
-    this.videoSearch(val);
-    this.setState({ searched: true });
+    if (val.length > 1) {
+      this.videoSearch(val);
+      this.setState({ searchable: true });
+    } else {
+      this.setState({ searchable: false });
+    }
   };
 
   videoSearch(term) {
     YTSearch({ key: API_KEY, term: term }, videos => {
-      if (this.state.searched) {
+      if (this.state.searchable) {
         this.setState({
           videos: videos,
           selectedVideo: videos[0]
@@ -41,7 +45,10 @@ class App extends Component {
     return (
       <div className="App">
         <SearchBar changed={this.onChangeHandler} />
-        <VideoDetail video={this.state.selectedVideo} />
+        <VideoDetail
+          searchable={this.state.searchable}
+          video={this.state.selectedVideo}
+        />
         <VideoList
           clicked={selectedVideo => this.setState({ selectedVideo })}
           videos={this.state.videos}
