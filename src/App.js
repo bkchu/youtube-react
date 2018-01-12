@@ -51,7 +51,14 @@ class App extends Component {
         />
         <VideoList
           searchable={this.state.searchable}
-          clicked={selectedVideo => this.setState({ selectedVideo })}
+          clicked={selectedVideo => {
+            YTSearch(
+              { key: API_KEY, term: selectedVideo.snippet.title },
+              videos => {
+                this.setState({ videos: videos, selectedVideo: selectedVideo });
+              }
+            );
+          }}
           videos={this.state.videos}
         />
       </div>
