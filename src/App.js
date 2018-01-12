@@ -50,6 +50,7 @@ class App extends Component {
           video={this.state.selectedVideo}
         />
         <VideoList
+          searchable={this.state.searchable}
           clicked={selectedVideo => this.setState({ selectedVideo })}
           videos={this.state.videos}
         />
