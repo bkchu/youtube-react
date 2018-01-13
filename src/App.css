@@ -11,9 +11,9 @@ body {
 .App {
   display: grid;
   grid-template-columns: repeat(11, auto) 300px;
-  grid-template-rows: 50px auto;
+  grid-template-rows: 100px auto;
   grid-template-areas:
-    "s s s s s s s s s s s l"
+    "s s s s s s s s s s s s"
     "d d d d d d d d d d d l";
 
   color: white;
@@ -22,7 +22,7 @@ body {
 @media (max-width: 900px) {
   .App {
     grid-template-columns: 1fr;
-    grid-template-rows: 50px auto 100px;
+    grid-template-rows: 100px auto 100px;
     grid-template-areas:
       "s"
       "d"
@@ -47,6 +47,7 @@ body {
   font-size: 1.5em;
   text-align: center;
   grid-area: s;
+  padding: 20px;
 }
 
 .SearchBar input[type="text"] {
@@ -56,6 +57,10 @@ body {
   height: 100%;
   width: 100%;
   padding: 10px 20px;
+  color: white;
+  background-color: #222222;
+  border-bottom: 1px solid white;
+  text-align: center;
 }
 
 .VideoList {

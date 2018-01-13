@@ -3,11 +3,7 @@ import moment from "moment";
 
 const videoDetail = props => {
   if (!props.video || !props.searchable) {
-    return (
-      <div className="loading">
-        <h1>Search for a video in the search bar above.</h1>
-      </div>
-    );
+    return <div className="loading" />;
   }
   const { videoId } = props.video.id;
   const url = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
