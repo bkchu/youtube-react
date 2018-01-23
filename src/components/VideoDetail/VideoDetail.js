@@ -12,7 +12,7 @@ const videoDetail = props => {
 
   return (
     <div className="VideoDetail">
-      <div className="embed-responsive embed-responsive-16by9">
+      <div className="video-container embed-responsive embed-responsive-16by9">
         <iframe
           id={videoId}
           className="embed-responsive-item"

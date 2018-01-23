@@ -30,6 +30,10 @@ class App extends Component {
     }
   };
 
+  onClickHandler = () => {
+    this.setState({ searchable: false });
+  };
+
   videoSearch(term) {
     YTSearch({ key: API_KEY, term: term }, videos => {
       if (this.state.searchable) {
@@ -44,7 +48,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <SearchBar changed={this.onChangeHandler} />
+        <SearchBar clear={this.onClickHandler} changed={this.onChangeHandler} />
         <VideoDetail
           searchable={this.state.searchable}
           video={this.state.selectedVideo}

@@ -16,6 +16,11 @@ class searchBar extends Component {
     this.setState({ term: term });
   }
 
+  onClickHandler = () => {
+    this.setState({ term: "" });
+    this.props.clear();
+  };
+
   render() {
     return (
       <div className="SearchBar">
@@ -25,6 +30,14 @@ class searchBar extends Component {
           value={this.state.term}
           placeholder="Type here to search."
         />
+        <button
+          onClick={this.onClickHandler}
+          type="button"
+          className="close button-clear"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
     );
   }
