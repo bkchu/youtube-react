@@ -14,7 +14,7 @@ h2 {
   font-size: 1.5em;
 }
 
-@media (max-width: 900px) {
+@media only screen and (max-width: 900px) {
   html,
   body {
     font-size: calc(1.3em + 1vw);
@@ -40,7 +40,7 @@ h2 {
   color: white;
 }
 
-@media (max-width: 900px) {
+@media only screen and (max-width: 900px) {
   .App {
     grid-template-columns: 1fr;
     grid-template-rows: 120px auto 100px;
@@ -57,7 +57,7 @@ h2 {
   margin-top: 35%;
 }
 
-@media (max-width: 900px) {
+@media only screen and (max-width: 900px) {
   .loading {
     grid-column: 1;
   }
@@ -83,8 +83,15 @@ h2 {
   background-color: #222222;
   border-bottom: 1px solid white;
   text-align: center;
-  font-size: 0.75em;
+  font-size: 0.5em;
 }
+
+@media only screen and (max-width: 900px) {
+  .SearchBar input[type="text"] {
+    padding: 0px;
+  }
+}
+
 .SearchBar .button-clear {
   width: 60px;
 
@@ -100,7 +107,7 @@ h2 {
   grid-area: l;
 }
 
-@media (max-width: 900px) {
+@media only screen and (max-width: 900px) {
   .VideoList {
     margin-top: 20px;
   }
@@ -112,7 +119,7 @@ h2 {
   padding: 0 0 5px 0;
 }
 
-@media (max-width: 900px) {
+@media only screen and (max-width: 900px) {
   .VideoList .VideoListItem {
     margin-left: 15px;
     margin-right: 15px;
@@ -152,7 +159,7 @@ h2 {
   width: 96%;
 }
 
-@media (max-width: 900px) {
+@media only screen and (max-width: 900px) {
   .VideoDetail .video-container {
     margin-left: 0;
     width: 100%;
