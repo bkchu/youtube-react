@@ -25,6 +25,7 @@ class searchBar extends Component {
     return (
       <div className="SearchBar">
         <input
+          autoFocus
           type="text"
           onChange={event => this.onInputChange(event.target.value)}
           value={this.state.term}
