@@ -105,6 +105,7 @@ h2 {
 
 .VideoList {
   grid-area: l;
+  margin-right: 20px;
 }
 
 @media only screen and (max-width: 900px) {
