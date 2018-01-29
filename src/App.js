@@ -47,7 +47,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App container-fluid">
         <SearchBar clear={this.onClickHandler} changed={this.onChangeHandler} />
         <VideoDetail
           searchable={this.state.searchable}
