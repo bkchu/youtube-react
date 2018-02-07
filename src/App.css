@@ -14,7 +14,7 @@ h2 {
   font-size: 1.5em;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 991.99px) {
   html,
   body {
     font-size: calc(1.3em + 1vw);
@@ -40,7 +40,7 @@ h2 {
   color: white;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 991.99px) {
   .App {
     grid-template-columns: 1fr;
     grid-template-rows: 120px auto 100px;
@@ -51,13 +51,20 @@ h2 {
   }
 }
 
+@media (max-width: 575.99px) {
+  .App.container {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}
+
 .loading {
   grid-column: 3 / 8;
   text-align: center;
   margin-top: 35%;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 991.99px) {
   .loading {
     grid-column: 1;
   }
@@ -86,7 +93,7 @@ h2 {
   font-size: 0.5em;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 991.99px) {
   .SearchBar input[type="text"] {
     padding: 0px;
   }
@@ -108,7 +115,7 @@ h2 {
   margin-right: 20px;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 991.99px) {
   .VideoList {
     margin-top: 20px;
   }
@@ -120,7 +127,7 @@ h2 {
   padding: 0 0 5px 0;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 991.99px) {
   .VideoList .VideoListItem {
     margin-left: 15px;
     margin-right: 15px;
@@ -160,8 +167,42 @@ h2 {
   width: 96%;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 991.99px) {
   .VideoDetail .video-container {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+.VideoDetail .button-copy {
+  background-color: transparent;
+  border: 2px solid #ccc;
+  color: #ccc;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  width: 96%;
+  margin: 0 auto;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.VideoDetail .button-copy:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.VideoDetail .button-copy:active {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.VideoDetail .button-copy:focus {
+  border: 2px solid #ccc;
+}
+
+@media only screen and (max-width: 991.99px) {
+  .VideoDetail .button-copy {
     margin-left: 0;
     width: 100%;
   }
@@ -195,8 +236,7 @@ h2 {
   margin-bottom: 10px;
 }
 
-
-@media only screen and (max-width: 900px){
+@media only screen and (max-width: 991.99px) {
   .container-fluid {
     padding-left: 0;
     padding-right: 0;
