@@ -38,9 +38,6 @@ class App extends Component {
     const opts = { maxResults: 10, type: "video", key: API_KEY };
     YTSearch(term, opts, (err, videos) => {
       if (err) return console.log(err);
-
-      console.log(videos);
-
       if (this.state.searchable) {
         this.setState({
           videos: videos,
@@ -64,7 +61,9 @@ class App extends Component {
         <VideoList
           searchable={this.state.searchable}
           clicked={selectedVideo => {
-            YTSearch({ key: API_KEY, term: selectedVideo.title }, videos => {
+            const opts = { maxResults: 10, type: "video", key: API_KEY };
+            YTSearch(selectedVideo.title, opts, (err, videos) => {
+              if (err) return console.log(err);
               this.setState({ videos: videos, selectedVideo: selectedVideo });
             });
           }}
