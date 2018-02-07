@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import YTSearch from "youtube-api-search";
+import YTSearch from "youtube-search";
 import "./App.css";
 
 import SearchBar from "./components/SearchBar/SearchBar";
@@ -30,12 +30,17 @@ class App extends Component {
     }
   };
 
-  onClickHandler = () => {
+  clearSearchHandler = () => {
     this.setState({ searchable: false });
   };
 
   videoSearch(term) {
-    YTSearch({ key: API_KEY, term: term }, videos => {
+    const opts = { maxResults: 10, type: "video", key: API_KEY };
+    YTSearch(term, opts, (err, videos) => {
+      if (err) return console.log(err);
+
+      console.log(videos);
+
       if (this.state.searchable) {
         this.setState({
           videos: videos,
@@ -47,8 +52,11 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App container-fluid">
-        <SearchBar clear={this.onClickHandler} changed={this.onChangeHandler} />
+      <div className="App container">
+        <SearchBar
+          clear={this.clearSearchHandler}
+          changed={this.onChangeHandler}
+        />
         <VideoDetail
           searchable={this.state.searchable}
           video={this.state.selectedVideo}
@@ -56,12 +64,9 @@ class App extends Component {
         <VideoList
           searchable={this.state.searchable}
           clicked={selectedVideo => {
-            YTSearch(
-              { key: API_KEY, term: selectedVideo.snippet.title },
-              videos => {
-                this.setState({ videos: videos, selectedVideo: selectedVideo });
-              }
-            );
+            YTSearch({ key: API_KEY, term: selectedVideo.title }, videos => {
+              this.setState({ videos: videos, selectedVideo: selectedVideo });
+            });
           }}
           videos={this.state.videos}
         />
