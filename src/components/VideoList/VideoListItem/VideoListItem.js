@@ -1,7 +1,7 @@
 import React from "react";
 
 const videoListItem = ({ video, clicked }) => {
-  let content = video.snippet;
+  let content = video;
   let channelUrl = `https://www.youtube.com/channel/${content.channelId}`;
   return (
     <div className="VideoListItem" onClick={() => clicked(video)}>

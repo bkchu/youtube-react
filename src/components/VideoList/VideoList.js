@@ -7,7 +7,7 @@ const videoList = props => {
   if (canShow) {
     videos = props.videos.map(video => {
       return (
-        <div key={video.etag}>
+        <div key={video.id}>
           <VideoListItem clicked={props.clicked} video={video} />
         </div>
       );
