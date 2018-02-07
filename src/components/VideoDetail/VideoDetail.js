@@ -1,8 +1,20 @@
 import React, { Component } from "react";
 import moment from "moment";
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import CopyButton from '../CopyButton/CopyButton';
 
 class videoDetail extends Component {
+
+  handleClick(e) {
+    e.target.innerText = "Copied!";
+    setTimeout(() => {
+      console.log("Hello world");
+
+
+    }, 1000);
+
+  }
+
   render() {
     if (!this.props.video || !this.props.searchable) {
       return <div className="loading" />;
@@ -27,8 +39,9 @@ class videoDetail extends Component {
         </div>
 
         <CopyToClipboard text={noEmbedUrl}>
-          <button className="button-copy">Click to copy video link.</button>
+          <button className="button-copy" onClick={(e) => this.handleClick(e)}>Click to copy video link.</button>
         </CopyToClipboard>
+        <CopyButton></CopyButton>
 
         <p className="video-title">{content.title}</p>
         <div className="description">

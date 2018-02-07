@@ -6,7 +6,8 @@ import SearchBar from "./components/SearchBar/SearchBar";
 import VideoList from "./components/VideoList/VideoList";
 import VideoDetail from "./components/VideoDetail/VideoDetail";
 
-const API_KEY = "AIzaSyDG9v7qTKWnHybipytBhhclhBSwyukl6zM";
+
+const API_KEY = "AIzaSyAohiC3Og0p-HERyWlCF1Db1tvKiiz0Kj8";
 
 class App extends Component {
   constructor(props) {
@@ -35,7 +36,11 @@ class App extends Component {
   };
 
   videoSearch(term) {
-    const opts = { maxResults: 10, type: "video", key: API_KEY };
+    const opts = {
+      maxResults: 10,
+      type: "video",
+      key: API_KEY
+    };
     YTSearch(term, opts, (err, videos) => {
       if (err) return console.log(err);
       if (this.state.searchable) {
@@ -61,14 +66,11 @@ class App extends Component {
         <VideoList
           searchable={this.state.searchable}
           clicked={selectedVideo => {
-            const opts = { maxResults: 10, type: "video", key: API_KEY };
-            YTSearch(selectedVideo.title, opts, (err, videos) => {
-              if (err) return console.log(err);
-              this.setState({ videos: videos, selectedVideo: selectedVideo });
-            });
+            this.videoSearch(selectedVideo.title)
           }}
           videos={this.state.videos}
         />
+
       </div>
     );
   }
