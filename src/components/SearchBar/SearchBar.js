@@ -35,7 +35,7 @@ class searchBar extends Component {
           onClick={this.onClickHandler}
           type="button"
           className="close button-clear"
-          aria-label="Close"
+          aria-label="Clear Search Bar"
         >
           <span aria-hidden="true">&times;</span>
         </button>

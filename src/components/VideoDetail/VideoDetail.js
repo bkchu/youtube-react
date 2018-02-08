@@ -3,26 +3,26 @@ import moment from "moment";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
 class videoDetail extends Component {
-
   handleClick(e) {
-    this.copyButton.innerText = "Copied!";
+    this.copyButton.innerHTML = 'Copied! <i class="fas fa-heart fa-spin"></i>';
     this.copyButton.classList.add("clicked");
-    setTimeout(() => {
-      this.copyButton.innerText = "Click to copy video link."
-      this.copyButton.classList.remove("clicked");
-    }, 1000);
 
+    setTimeout(() => {
+      this.copyButton.innerText = "Click to copy video link.";
+      this.copyButton.classList.remove("clicked");
+    }, 500);
   }
 
   render() {
     if (!this.props.video || !this.props.searchable) {
       return <div className="loading" />;
     }
+
     const videoId = this.props.video.id;
     const url = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
     const noEmbedUrl = `https://www.youtube.com/watch?v=${videoId}`;
     const content = this.props.video;
-    let channelUrl = `https://www.youtube.com/channel/${content.channelId}`;
+    const channelUrl = `https://www.youtube.com/channel/${content.channelId}`;
 
     return (
       <div className="VideoDetail">
@@ -38,7 +38,15 @@ class videoDetail extends Component {
         </div>
 
         <CopyToClipboard text={noEmbedUrl}>
-          <button className="button-copy" ref={(button) => { this.copyButton = button }} onClick={(e) => this.handleClick(e)}>Click to copy video link.</button>
+          <button
+            className="button-copy"
+            ref={button => {
+              this.copyButton = button;
+            }}
+            onClick={e => this.handleClick(e)}
+          >
+            Click to copy video link.
+          </button>
         </CopyToClipboard>
 
         <p className="video-title">{content.title}</p>

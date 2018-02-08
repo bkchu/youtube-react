@@ -101,13 +101,24 @@ h2 {
 
 .SearchBar .button-clear {
   width: 60px;
-
   opacity: 1;
   color: #ccc;
   text-shadow: none;
   float: none;
-
   line-height: none;
+  transition: all 0.05s ease-in-out;
+}
+
+.SearchBar .button-clear:focus {
+  outline: 0;
+}
+
+.SearchBar .button-clear:hover {
+  transform: scale(1.1);
+}
+
+.SearchBar .button-clear:active {
+  transform: scale(0.9);
 }
 
 .VideoList {
@@ -176,8 +187,8 @@ h2 {
 
 .VideoDetail .button-copy {
   background-color: transparent;
-  border: 2px solid #ccc;
-  color: #ccc;
+  border: 2px solid white;
+  color: white;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -185,21 +196,26 @@ h2 {
   font-size: 1em;
   width: 96%;
   margin: 0 auto;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
 }
 
 .VideoDetail .button-copy:hover {
   background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.02);
 }
 
 .VideoDetail .button-copy.clicked {
-  background-color: #4BB543;
-  color: white;
+  background-color: white;
+  color: red;
+}
+
+.VideoDetail .button-copy:active {
+  transform: scale(0.98);
 }
 
 .VideoDetail .button-copy:focus {
-  border: 2px solid #ccc;
+  border: 2px solid white;
+  outline: 0;
 }
 
 @media only screen and (max-width: 991.99px) {
@@ -243,5 +259,3 @@ h2 {
     padding-right: 0;
   }
 }
-
-
