@@ -190,11 +190,12 @@ h2 {
 }
 
 .VideoDetail .button-copy:hover {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
-.VideoDetail .button-copy:active {
-  background-color: rgba(255, 255, 255, 0.7);
+.VideoDetail .button-copy.clicked {
+  background-color: #4BB543;
+  color: white;
 }
 
 .VideoDetail .button-copy:focus {
@@ -242,3 +243,5 @@ h2 {
     padding-right: 0;
   }
 }
+
+
