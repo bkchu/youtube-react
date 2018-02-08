@@ -1,6 +1,5 @@
 {
   "name": "youtube-react",
-  "homepage": "https://bkchu.github.io/youtube-react/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -50,8 +49,6 @@
     "youtube-search": "^1.0.10"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
@@ -97,8 +94,5 @@
   },
   "eslintConfig": {
     "extends": "react-app"
-  },
-  "devDependencies": {
-    "gh-pages": "^1.1.0"
   }
 }
