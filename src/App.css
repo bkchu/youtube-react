@@ -193,8 +193,8 @@ h2 {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-.VideoDetail .button-copy:active {
-  background-color: rgba(255, 255, 255, 0.5);
+.VideoDetail .button-copy.clicked {
+  background-color: #4BB543;
   color: white;
 }
 
