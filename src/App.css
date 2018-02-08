@@ -34,7 +34,7 @@ h2 {
   grid-template-columns: repeat(11, auto) 300px;
   grid-template-rows: 100px auto;
   grid-template-areas:
-    "s s s s s s s s s s s s"
+    "o s s s s s s s s s s s"
     "d d d d d d d d d d d l";
 
   color: white;
@@ -43,11 +43,36 @@ h2 {
 @media only screen and (max-width: 991.99px) {
   .App {
     grid-template-columns: 1fr;
-    grid-template-rows: 120px auto 100px;
+    grid-template-rows: 120px auto auto 60px;
     grid-template-areas:
       "s"
       "d"
-      "l";
+      "l"
+      "o";
+  }
+}
+
+.Logo {
+  grid-area: o;
+  text-align: right;
+}
+
+.Logo img {
+  width: 100px;
+  padding-top: 10px;
+  padding-left: 20px;
+}
+
+@media (max-width: 991.99px) {
+  .Logo {
+    grid-area: o;
+    text-align: center;
+  }
+  .Logo img {
+    padding: 0;
+    margin: 20px auto;
+    width: 15%;
+    min-width: 100px;
   }
 }
 
@@ -58,21 +83,10 @@ h2 {
   }
 }
 
-.loading {
-  grid-column: 3 / 8;
-  text-align: center;
-  margin-top: 35%;
-}
-
-@media only screen and (max-width: 991.99px) {
-  .loading {
-    grid-column: 1;
-  }
-}
-
 .SearchBar {
   font-family: "Roboto Slab", sans-serif;
   display: flex;
+  justify-content: space-between;
   text-align: center;
   grid-area: s;
   padding: 20px;
@@ -84,8 +98,8 @@ h2 {
   border-width: 0;
   outline: none;
   height: 100%;
-
-  padding: 10px 20px;
+  min-width: 100%;
+  padding: 10px 15px;
   color: white;
   background-color: #222222;
   border-bottom: 1px solid white;

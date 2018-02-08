@@ -5,7 +5,7 @@ import "./App.css";
 import SearchBar from "./components/SearchBar/SearchBar";
 import VideoList from "./components/VideoList/VideoList";
 import VideoDetail from "./components/VideoDetail/VideoDetail";
-
+import Logo from "./components/UI/Logo/Logo";
 
 const API_KEY = "AIzaSyAohiC3Og0p-HERyWlCF1Db1tvKiiz0Kj8";
 
@@ -55,6 +55,7 @@ class App extends Component {
   render() {
     return (
       <div className="App container">
+        <Logo />
         <SearchBar
           clear={this.clearSearchHandler}
           changed={this.onChangeHandler}
@@ -66,11 +67,10 @@ class App extends Component {
         <VideoList
           searchable={this.state.searchable}
           clicked={selectedVideo => {
-            this.videoSearch(selectedVideo.title)
+            this.videoSearch(selectedVideo.title);
           }}
           videos={this.state.videos}
         />
-
       </div>
     );
   }
