@@ -31,11 +31,11 @@ h2 {
 
 .App {
   display: grid;
-  grid-template-columns: repeat(11, auto) 300px;
+  grid-template-columns: 100px auto 300px;
   grid-template-rows: 100px auto;
   grid-template-areas:
-    "o s s s s s s s s s s s"
-    "d d d d d d d d d d d l";
+    "o s s"
+    "d d l";
 
   color: white;
 }
@@ -58,9 +58,8 @@ h2 {
 }
 
 .Logo img {
-  width: 100px;
+  width: 80px;
   padding-top: 10px;
-  padding-left: 20px;
 }
 
 @media (max-width: 991.99px) {
