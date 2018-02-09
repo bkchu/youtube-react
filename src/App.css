@@ -89,6 +89,7 @@ h2 {
   text-align: center;
   grid-area: s;
   padding: 20px;
+  padding-right: 0;
 }
 
 .SearchBar input[type="text"] {
@@ -97,7 +98,6 @@ h2 {
   border-width: 0;
   outline: none;
   height: 100%;
-  min-width: 100%;
   padding: 10px 15px;
   color: white;
   background-color: #222222;
