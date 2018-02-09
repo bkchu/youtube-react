@@ -31,7 +31,7 @@ h2 {
 
 .App {
   display: grid;
-  grid-template-columns: 100px auto 300px;
+  grid-template-columns: 100px auto 350px;
   grid-template-rows: 100px auto;
   grid-template-areas:
     "o s s"
@@ -210,6 +210,7 @@ h2 {
   width: 96%;
   margin: 0 auto;
   transition: all 0.15s ease-in-out;
+  box-sizing: border-box;
 }
 
 .VideoDetail .button-copy:hover {
