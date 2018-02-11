@@ -1,13 +1,9 @@
 import React, { Component } from "react";
 
 class searchBar extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      term: ""
-    };
-  }
+  state = {
+    term: ""
+  };
 
   onInputChange(term) {
     if (term !== "") {
@@ -19,6 +15,12 @@ class searchBar extends Component {
   onClickHandler = () => {
     this.setState({ term: "" });
     this.props.clear();
+    this.searchbar.focus();
+  };
+
+  logoPressedHandler = () => {
+    this.setState({ term: "" });
+    this.searchbar.focus();
   };
 
   render() {
@@ -30,6 +32,9 @@ class searchBar extends Component {
           onChange={event => this.onInputChange(event.target.value)}
           value={this.state.term}
           placeholder="Type here to search."
+          ref={instance => {
+            this.searchbar = instance;
+          }}
         />
         <button
           onClick={this.onClickHandler}

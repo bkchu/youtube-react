@@ -1,10 +1,10 @@
 import React from "react";
 import instatubeLogo from "../../../Instatube_Favicon.svg";
 
-const logo = () => {
+const logo = props => {
   return (
     <div className="Logo">
-      <img src={instatubeLogo} alt="logo" />
+      <img onClick={props.clicked} src={instatubeLogo} alt="logo" />
     </div>
   );
 };

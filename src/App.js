@@ -13,8 +13,6 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.videoSearch("");
-
     this.state = {
       videos: [],
       selectedVideo: null,
@@ -33,6 +31,7 @@ class App extends Component {
 
   clearSearchHandler = () => {
     this.setState({ searchable: false });
+    this.searchbar.logoPressedHandler();
   };
 
   videoSearch(term) {
@@ -55,8 +54,9 @@ class App extends Component {
   render() {
     return (
       <div className="App container">
-        <Logo />
+        <Logo clicked={this.clearSearchHandler} />
         <SearchBar
+          ref={instance => (this.searchbar = instance)}
           clear={this.clearSearchHandler}
           changed={this.onChangeHandler}
         />

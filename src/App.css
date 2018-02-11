@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   background-color: #222222;
   box-sizing: border-box;
   font-family: "Roboto Condensed", sans-serif;
@@ -11,15 +12,16 @@ h2 {
   font-size: 1.5em;
 }
 @media only screen and (max-width: 991.99px) {
-  html, body {
-      font-size: calc(1.3em + 1vw);
- }
+  html,
+  body {
+    font-size: calc(1.3em + 1vw);
+  }
   h1 {
-      font-size: 2em;
- }
+    font-size: 2em;
+  }
   h2 {
-      font-size: 1.5em;
- }
+    font-size: 1.5em;
+  }
 }
 .App {
   display: grid;
@@ -30,14 +32,16 @@ h2 {
 }
 @media only screen and (max-width: 991.99px) {
   .App {
-      grid-template-columns: 1fr;
-      grid-template-rows: 120px auto auto 60px;
-      grid-template-areas: "s" "d" "l" "o";
- }
+    grid-template-columns: 1fr;
+    grid-template-rows: 120px auto auto 60px;
+    grid-template-areas: "s" "d" "l" "o";
+  }
 }
 .Logo {
   grid-area: o;
   text-align: right;
+  cursor: pointer;
+  transition: all 0.05s ease-in-out;
 }
 .Logo img {
   width: 80px;
@@ -45,21 +49,29 @@ h2 {
 }
 @media (max-width: 991.99px) {
   .Logo {
-      grid-area: o;
-      text-align: center;
- }
+    grid-area: o;
+    text-align: center;
+  }
   .Logo img {
-      padding: 0;
-      margin: 20px auto;
-      width: 15%;
-      min-width: 100px;
- }
+    padding: 0;
+    margin: 20px auto;
+    width: 15%;
+    min-width: 100px;
+  }
 }
+
+.Logo:hover {
+  transform: scale(1.05);
+}
+.Logo:active {
+  transform: scale(0.95);
+}
+
 @media (max-width: 575.99px) {
   .App.container {
-      padding-right: 0px;
-      padding-left: 0px;
- }
+    padding-right: 0px;
+    padding-left: 0px;
+  }
 }
 .SearchBar {
   font-family: "Roboto Slab", sans-serif;
@@ -85,8 +97,8 @@ h2 {
 }
 @media only screen and (max-width: 991.99px) {
   .SearchBar input[type="text"] {
-      padding: 0px;
- }
+    padding: 0px;
+  }
 }
 .SearchBar .button-clear {
   width: 60px;
@@ -111,8 +123,8 @@ h2 {
 }
 @media only screen and (max-width: 991.99px) {
   .VideoList {
-      margin-top: 20px;
- }
+    margin-top: 20px;
+  }
 }
 .VideoList .VideoListItem {
   display: flex;
@@ -121,9 +133,9 @@ h2 {
 }
 @media only screen and (max-width: 991.99px) {
   .VideoList .VideoListItem {
-      margin-left: 15px;
-      margin-right: 15px;
- }
+    margin-left: 15px;
+    margin-right: 15px;
+  }
 }
 .VideoList .VideoListItem:hover {
   background-color: rgba(255, 255, 255, 0.1);
@@ -136,7 +148,8 @@ h2 {
 .VideoList .VideoListItem a {
   color: #999;
 }
-.VideoList .VideoListItem .video-thumbnail, .VideoList .VideoListItem .video-text-content .video-title {
+.VideoList .VideoListItem .video-thumbnail,
+.VideoList .VideoListItem .video-text-content .video-title {
   cursor: pointer;
 }
 .VideoDetail {
@@ -153,9 +166,9 @@ h2 {
 }
 @media only screen and (max-width: 991.99px) {
   .VideoDetail .video-container {
-      margin-left: 0;
-      width: 100%;
- }
+    margin-left: 0;
+    width: 100%;
+  }
 }
 .VideoDetail .button-copy {
   background-color: transparent;
@@ -188,9 +201,9 @@ h2 {
 }
 @media only screen and (max-width: 991.99px) {
   .VideoDetail .button-copy {
-      margin-left: 0;
-      width: 100%;
- }
+    margin-left: 0;
+    width: 100%;
+  }
 }
 .VideoDetail .description {
   padding: 20px 10px;
@@ -199,7 +212,8 @@ h2 {
   word-wrap: break-word;
   hyphens: auto;
 }
-.VideoDetail a, .VideoDetail p {
+.VideoDetail a,
+.VideoDetail p {
   padding: 0 10px;
   margin: 0;
 }
@@ -218,7 +232,7 @@ h2 {
 }
 @media only screen and (max-width: 991.99px) {
   .container-fluid {
-      padding-left: 0;
-      padding-right: 0;
- }
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
