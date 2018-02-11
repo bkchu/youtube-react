@@ -136,7 +136,6 @@ h2 {
 
 .VideoList {
   grid-area: l;
-  margin-right: 20px;
 }
 
 @media only screen and (max-width: 991.99px) {
@@ -240,9 +239,8 @@ h2 {
 }
 
 .VideoDetail .description {
-  padding: 20px 0;
-  padding-left: 10px;
-  margin-right: 10%;
+  padding: 20px 10px;
+  margin: 0 auto;
   overflow-wrap: break-word;
   word-break: break-all;
   word-wrap: break-word;
