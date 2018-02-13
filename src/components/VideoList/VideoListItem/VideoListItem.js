@@ -1,20 +1,32 @@
 import React from "react";
 
-const videoListItem = ({ video, clicked }) => {
-  let content = video;
-  let channelUrl = `https://www.youtube.com/channel/${content.channelId}`;
+const videoListItem = ({ first, video, clicked }) => {
+  const content = video;
+  const channelUrl = `https://www.youtube.com/channel/${content.channelId}`;
+
+
+  const thumbnail = (
+    <img
+      className="video-thumbnail"
+      src={content.thumbnails.default.url}
+      alt={content.title}
+    />
+  )
+
+  const description = (
+    <div className="video-text-content">
+      <p className="video-title">{content.title}</p>
+      <a target="_blank" href={channelUrl}>
+        {content.channelTitle}
+      </a>
+    </div>
+  )
+
   return (
-    <div className="VideoListItem" onClick={() => clicked(video)}>
-      <img
-        className="video-thumbnail"
-        src={content.thumbnails.default.url}
-        alt={content.title}
-      />
-      <div className="video-text-content">
-        <p className="video-title">{content.title}</p>
-        <a target="_blank" href={channelUrl}>
-          {content.channelTitle}
-        </a>
+    <div>
+      <div className="VideoListItem" onClick={() => clicked(video)}>
+        {thumbnail}
+        {description}
       </div>
     </div>
   );

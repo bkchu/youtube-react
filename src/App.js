@@ -36,7 +36,7 @@ class App extends Component {
 
   videoSearch(term) {
     const opts = {
-      maxResults: 10,
+      maxResults: 11,
       type: "video",
       key: API_KEY
     };
@@ -48,6 +48,7 @@ class App extends Component {
           selectedVideo: videos[0]
         });
       }
+      console.log(videos);
     });
   }
 

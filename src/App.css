@@ -121,16 +121,31 @@ h2 {
 .VideoList {
   grid-area: l;
 }
+
+.VideoList>p {
+  font-size: .45em;
+  margin-left: 5px;
+  margin-bottom: 10px;
+}
+
 @media only screen and (max-width: 991.99px) {
   .VideoList {
     margin-top: 20px;
   }
+  
+  .VideoList>p {
+    font-size: .45em;
+    margin-left: 20px;
+  }
 }
+
 .VideoList .VideoListItem {
   display: flex;
   align-items: flex-start;
   padding: 0 0 5px 0;
 }
+
+
 @media only screen and (max-width: 991.99px) {
   .VideoList .VideoListItem {
     margin-left: 15px;
@@ -152,6 +167,7 @@ h2 {
 .VideoList .VideoListItem .video-text-content .video-title {
   cursor: pointer;
 }
+
 .VideoDetail {
   grid-area: d;
   height: 100%;

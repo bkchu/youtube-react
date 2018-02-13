@@ -5,16 +5,24 @@ const videoList = props => {
   let canShow = props.searchable;
   let videos = null;
   if (canShow) {
-    videos = props.videos.map(video => {
+    videos = props.videos.map((video, i) => {
       return (
         <div key={video.id}>
-          <VideoListItem clicked={props.clicked} video={video} />
+          {i === 0 ?
+            null :
+            (<VideoListItem clicked={props.clicked} video={video} />)
+          }
         </div>
       );
     });
   }
 
-  return <div className="VideoList">{videos}</div>;
+  return (
+    <div className="VideoList">
+      {canShow && (<p>Related Videos</p>)}
+      {videos}
+    </div>
+  )
 };
 
 export default videoList;
