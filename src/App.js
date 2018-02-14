@@ -42,13 +42,12 @@ class App extends Component {
     };
     YTSearch(term, opts, (err, videos) => {
       if (err) return console.log(err);
-      if (this.state.searchable) {
+      if (this.state.searchable && videos.length !== 0) {
         this.setState({
           videos: videos,
           selectedVideo: videos[0]
         });
       }
-      console.log(videos);
     });
   }
 
